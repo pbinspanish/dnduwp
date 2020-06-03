@@ -4,11 +4,31 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DnD"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Windows.UI.Xaml.Controls"
+	mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+		<muxc:NavigationView x:Name="nvSample" PaneDisplayMode="Top" ItemInvoked="nvSample_ItemInvoked" Loaded="nvSample_Loaded">
+			<muxc:NavigationView.MenuItems>
+				<muxc:NavigationViewItem Content="Home" Tag="home">
+					<muxc:NavigationViewItem.Icon>
+						<SymbolIcon Symbol="Home"/>
+					</muxc:NavigationViewItem.Icon>
+				</muxc:NavigationViewItem>
+				<muxc:NavigationViewItem  Content="Dice" Tag="dice">
+					<muxc:NavigationViewItem.Icon>
+						<SymbolIcon Symbol="AlignLeft" />
+					</muxc:NavigationViewItem.Icon>
+				</muxc:NavigationViewItem>
+				<muxc:NavigationViewItem  Content="Character" Tag="character">
+					<muxc:NavigationViewItem.Icon>
+						<SymbolIcon Symbol="Contact" />
+					</muxc:NavigationViewItem.Icon>
+				</muxc:NavigationViewItem>
+			</muxc:NavigationView.MenuItems>
+			<Frame x:Name="contentFrame"/>
+		</muxc:NavigationView>
 
-    </Grid>
+	</Grid>
 </Page>
